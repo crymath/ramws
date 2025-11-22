@@ -1,0 +1,29 @@
+[package]
+name = "ramws"
+version = "0.1.0"
+edition = "2021"
+description = "Per-project RAM workspace orchestrator"
+license = "MIT OR Apache-2.0"
+repository = "https://example.com/ramws"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+dialoguer = "0.10"
+dirs = "5"
+nix = { version = "0.27", default-features = false, features = ["fs"] }
+serde = { version = "1", features = ["derive"] }
+serde_yaml = "0.9"
+serde_json = "1"
+sha1 = "0.10"
+thiserror = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
+walkdir = "2"
+
+[dev-dependencies]
+assert_cmd = "2"
+predicates = "3"
+tempfile = "3"
