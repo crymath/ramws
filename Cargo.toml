@@ -1,0 +1,44 @@
+[workspace]
+members = [
+  "crates/ramws-core",
+  "crates/ramws",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+version = "0.1.0"
+authors = ["ramws contributors"]
+
+[workspace.dependencies]
+anyhow = "1.0.102"
+assert_cmd = "2.1.2"
+blake3 = "1.8.3"
+clap = { version = "4.5.60", features = ["derive", "env"] }
+directories = "6.0.0"
+fd-lock = "4.0.4"
+filetime = "0.2.27"
+globset = "0.4.18"
+ignore = "0.4.25"
+plist = "1.8.0"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.145"
+tempfile = "3.26.0"
+thiserror = "2.0.18"
+toml = "1.0.3"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.22", features = ["env-filter", "fmt"] }
+uuid = { version = "1.21.0", features = ["v4", "serde"] }
+walkdir = "2.5.0"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+unwrap_used = "warn"
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
